@@ -8,11 +8,11 @@ import "../styles/common.css";
 const Profile = () => {
   const [user, setUser] = useState(null);
 
-  // Profile fields
+  
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
 
-  // Password fields
+  
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 
@@ -20,7 +20,6 @@ const Profile = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  // Fetch profile
   useEffect(() => {
     api.get("/user/profile").then((res) => {
       setUser(res.data.data);
@@ -29,7 +28,7 @@ const Profile = () => {
     });
   }, []);
 
-  // Update profile (name + email)
+  
   const updateProfile = async () => {
     setError("");
     setMessage("");
@@ -44,7 +43,6 @@ const Profile = () => {
     }
   };
 
-  // Change password
   const changePassword = async () => {
     setError("");
     setMessage("");
@@ -70,7 +68,6 @@ const Profile = () => {
     }
   };
 
-  // Cancel changes
   const cancelChanges = () => {
     if (user) {
       setFullName(user.fullName);
@@ -93,7 +90,6 @@ const Profile = () => {
           {message && <p className="alert-success">{message}</p>}
           {error && <p className="alert-error">{error}</p>}
 
-          {/* Profile Info */}
           <Input
             label="Full Name"
             value={fullName}
@@ -128,7 +124,6 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Change Password Section */}
         <div className="card">
           <h3>Change Password</h3>
 

@@ -19,11 +19,11 @@ const Login = () => {
     try {
       const res = await api.post("/auth/login", form);
 
-      // Save token & role
+      
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role); // backend already knows role
+      localStorage.setItem("role", res.data.role); 
 
-      // Role-based redirect
+      
       if (res.data.role === "admin") {
         navigate("/admin");
       } else {

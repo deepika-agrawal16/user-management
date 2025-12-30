@@ -47,7 +47,6 @@ const Signup = () => {
         confirmPassword: "",
       });
 
-      // Redirect after short delay (good UX)
       setTimeout(() => {
         navigate("/login");
       }, 1500);

@@ -71,11 +71,9 @@ export const login = async (req, res, next) => {
         message: "Invalid email or password",
       });
     }
-    // Update last login
     user.lastLogin = new Date();
     await user.save();
 
-    // Generate token
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,

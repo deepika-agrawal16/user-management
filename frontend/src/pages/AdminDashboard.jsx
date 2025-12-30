@@ -30,14 +30,14 @@ const AdminDashboard = () => {
     fetchUsers();
   }, [page]);
 
-  // Open confirmation modal
+  
   const openModal = (user, status) => {
     setSelectedUser(user);
     setNextStatus(status);
     setShowModal(true);
   };
 
-  // Confirm activate/deactivate
+  
   const confirmStatusChange = async () => {
     await api.patch(`/admin/users/${selectedUser._id}/status`, {
       status: nextStatus,
@@ -110,7 +110,6 @@ const AdminDashboard = () => {
             </div>
           )}
 
-          {/* Pagination */}
           <div className="pagination">
             <Button
               variant="secondary"
@@ -132,7 +131,7 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Confirmation Modal */}
+      
       {showModal && (
         <Modal
           title="Confirm Action"
