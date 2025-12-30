@@ -69,9 +69,34 @@ Create a .env file in the backend folder with the following variables.
      4) Set start command: npm start
      5) Add environment variables in Render dashboard
      6) Deploy service
+        
    Frontend Deployment (Vercel)  
      1) Push frontend code to GitHub
-     2) Import project into Netlify
+     2) Import project into Vercel
      3) Set framework as Vite + React
      4) Update API base URL to deployed backend
      5) Deploy
+  
+6) API Documentation:-
+    1) Signup:-  POST /api/auth/signup
+    2) Login:-  POST /api/auth/login
+    3) Get Profile:- GET /api/user/profile
+                     Authorization: Bearer <token>
+    4) Update Profile:- PUT /api/user/profile
+    5) Change Password:- PUT /api/user/change-password
+    6) Get All Users (Paginated):- GET /api/admin/users?page=1
+                                   Authorization: Bearer <admin-token>
+    7) Activate / Deactivate User:- PATCH /api/admin/users/:userId/status
+
+
+Notes:-
+ Users cannot select admin role during signup (security best practice)
+ Admin roles are assigned manually
+ All protected routes use JWT authentication
+ Passwords are securely hashed using bcrypt
+
+                
+ 
+
+
+    
