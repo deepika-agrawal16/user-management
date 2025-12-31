@@ -70,9 +70,9 @@ Create a .env file in the backend folder with the following variables.
      5) Add environment variables in Render dashboard
      6) Deploy service
         
-   Frontend Deployment (Vercel)  
+   Frontend Deployment (Netlify)  
      1) Push frontend code to GitHub
-     2) Import project into Vercel
+     2) Import project into Netlify
      3) Set framework as Vite + React
      4) Update API base URL to deployed backend
      5) Deploy
